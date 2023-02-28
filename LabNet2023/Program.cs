@@ -13,13 +13,15 @@ namespace LabNet2023
             try
             {
                 Console.WriteLine("Hello World\nApreta enter para cerrar**");
-                Console.ReadLine();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message + " - " + ex.StackTrace);
             }
-           
+            finally
+            { 
+                Console.ReadLine(); 
+            }
         }
     }
 }
