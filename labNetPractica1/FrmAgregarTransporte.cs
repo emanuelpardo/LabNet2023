@@ -1,4 +1,5 @@
 ﻿using BE;
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,12 @@ namespace labNetPractica1
 {
     public partial class FrmAgregarTransporte : Form
     {
-
-        List<TransportePublico> L_Tpublico;
+        public string TipoTransporte { get; set; }
+        public int NumeroTransporte { get; set; }
+        public int NumeroPasajeros { get; set; }
         public FrmAgregarTransporte()
         {
             InitializeComponent();
-            
         }
 
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
@@ -34,22 +35,38 @@ namespace labNetPractica1
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.No;
             this.Close();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (L_Tpublico != null)
+            try
             {
-                if (Int32.Parse(txtNumero.Text) > 0 && L_TransportePub)
-                    TransportePublico NuevoTP;
-                if (rbOmnibus.Checked)
-                    NuevoTP = new Omnibus();
-                else if (rbTaxi.Checked)
-                    NuevoTP = new Taxi();
+                if (int.TryParse(txtNumero.Text, out int numero_transporte))
+                {
+                    if (int.TryParse(txtPasajeros.Text, out int numero_pasajeros))
+                    {
+                        this.NumeroTransporte = numero_transporte;
+                        this.NumeroPasajeros = numero_pasajeros;
+                        if (rbOmnibus.Checked)
+                            this.TipoTransporte = rbOmnibus.Text;
+                        else
+                            this.TipoTransporte = rbTaxi.Text;
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("Agregue un número de pasajeros");
+                }
+                else
+                    MessageBox.Show("Agregue un número de pasajeros");
             }
-
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message+" - "+ex.StackTrace);
+                this.DialogResult = DialogResult.Abort;
+            }  
         }
     }
 }

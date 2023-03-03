@@ -8,6 +8,9 @@ namespace BE
 {
     public abstract class TransportePublico 
     {
+        public const string TipoOmnibus = "Omnibus";
+        public const string TipoTaxi = "Taxi";
+
         private int numero;
         private int pasajeros;
 
@@ -22,14 +25,24 @@ namespace BE
             set { pasajeros = value; }
         }
 
+        private string tipo;
+
+        public string Tipo
+        {
+            get { return tipo; }
+            set { tipo = value; }
+        }
+
+
 
         public TransportePublico()
         {
 
         }
 
-        public TransportePublico(int Numero, int Pasajeros)
+        public TransportePublico(string Tipo, int Numero, int Pasajeros)
         {
+            this.Tipo = Tipo;
             this.Numero = Numero;
             this.Pasajeros = Pasajeros;
 

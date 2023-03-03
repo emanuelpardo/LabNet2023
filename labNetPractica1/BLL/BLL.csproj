@@ -41,13 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Empresa.cs" />
+    <Compile Include="BLLTransportes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">
       <Project>{52B5E847-1150-4952-9AB0-80E1206E4228}</Project>
       <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INterfaces\INTERFACES.csproj">
+      <Project>{C788F94E-266A-423D-9B43-E2E44B7B51F7}</Project>
+      <Name>INTERFACES</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

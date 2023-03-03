@@ -13,7 +13,7 @@ namespace BE
         {
         }
 
-        public Taxi(int Numero, int Pasajeros) : base(Numero, Pasajeros)
+        public Taxi(string Tipo, int Numero, int Pasajeros) : base(Tipo, Numero, Pasajeros)
         {
         }
 

@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BE", "BE\BE.csproj", "{52B5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{2BB8ECBE-32B0-4D07-99A9-F1F67BDAE824}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INterfaces", "INterfaces\INterfaces.csproj", "{C788F94E-266A-423D-9B43-E2E44B7B51F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INTERFACES", "INterfaces\INTERFACES.csproj", "{C788F94E-266A-423D-9B43-E2E44B7B51F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

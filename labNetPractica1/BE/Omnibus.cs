@@ -12,7 +12,7 @@ namespace BE
         {
         }
 
-        public Omnibus(int Numero, int Pasajero) : base(Numero,Pasajero)
+        public Omnibus(string Tipo, int Numero, int Pasajero) : base(Tipo, Numero,Pasajero)
         { 
         }
 

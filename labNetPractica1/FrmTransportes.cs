@@ -14,11 +14,11 @@ namespace labNetPractica1
 {
     public partial class FrmTransportes : Form
     {
-        Empresa NegocioTransporte;
+        BLLTransportes NegocioTransporte;
         public FrmTransportes()
         {
             InitializeComponent();
-            NegocioTransporte = new Empresa();
+            NegocioTransporte = new BLLTransportes();
             
         }
 
@@ -32,16 +32,20 @@ namespace labNetPractica1
         {
             try
             {
-                if (NegocioTransporte.Lista_esMenoraDiez())
-                {
-                    FrmAgregarTransporte frmAT = new FrmAgregarTransporte();
-                    if (frmAT.ShowDialog() == DialogResult.OK)
-                        MessageBox.Show("Agregado OK", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Ya existen 10 transportes públicos");
-                }
+                    if (NegocioTransporte.Lista_esMenoraDiez())
+                    {
+                        FrmAgregarTransporte frmAT = new FrmAgregarTransporte();
+                        if (frmAT.ShowDialog() == DialogResult.OK)
+                        {
+                            var (ok, mensaje) = this.NegocioTransporte.AgregarLista(frmAT.TipoTransporte, frmAT.NumeroPasajeros, frmAT.NumeroTransporte);
+                            if (ok)
+                                MessageBox.Show("Agregado OK", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            else
+                                MessageBox.Show(mensaje);
+                        }
+                    }
+                    else
+                        MessageBox.Show("Ya existen 10 transportes públicos");
             }
             catch (Exception ex)
             {
