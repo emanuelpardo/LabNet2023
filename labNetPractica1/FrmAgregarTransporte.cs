@@ -15,10 +15,10 @@ namespace labNetPractica1
     {
 
         List<TransportePublico> L_Tpublico;
-        public FrmAgregarTransporte(List<TransportePublico> L_TransportePub)
+        public FrmAgregarTransporte()
         {
             InitializeComponent();
-            L_Tpublico = L_TransportePub;
+            
         }
 
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
@@ -41,7 +41,7 @@ namespace labNetPractica1
         {
             if (L_Tpublico != null)
             {
-                if (txtNumero > 0 && !L_TransportePub)
+                if (Int32.Parse(txtNumero.Text) > 0 && L_TransportePub)
                     TransportePublico NuevoTP;
                 if (rbOmnibus.Checked)
                     NuevoTP = new Omnibus();

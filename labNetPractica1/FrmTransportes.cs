@@ -1,4 +1,5 @@
 ﻿using BE;
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,12 @@ namespace labNetPractica1
 {
     public partial class FrmTransportes : Form
     {
-        List<TransportePublico> L_TransportePub;
+        Empresa NegocioTransporte;
         public FrmTransportes()
         {
             InitializeComponent();
-            L_TransportePub = new List<TransportePublico>();
+            NegocioTransporte = new Empresa();
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -28,18 +30,24 @@ namespace labNetPractica1
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (L_TransportePub?.Count < 10)
+            try
             {
-                FrmAgregarTransporte frmAT = new FrmAgregarTransporte(L_TransportePub);
-                if (frmAT.ShowDialog() == DialogResult.OK)
-                { 
-                    
+                if (NegocioTransporte.Lista_esMenoraDiez())
+                {
+                    FrmAgregarTransporte frmAT = new FrmAgregarTransporte();
+                    if (frmAT.ShowDialog() == DialogResult.OK)
+                        MessageBox.Show("Agregado OK", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ya existen 10 transportes públicos");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Ya existen 10 transportes públicos");
+                MessageBox.Show(ex.Message + ex.StackTrace);                
             }
+           
         }
     }
 }
