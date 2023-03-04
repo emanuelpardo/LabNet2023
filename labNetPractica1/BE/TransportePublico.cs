@@ -13,6 +13,7 @@ namespace BE
 
         private int numero;
         private int pasajeros;
+        private string tipo;
 
         public int Numero
         {
@@ -24,8 +25,6 @@ namespace BE
             get { return pasajeros; }
             set { pasajeros = value; }
         }
-
-        private string tipo;
 
         public string Tipo
         {

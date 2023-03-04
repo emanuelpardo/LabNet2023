@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace labNetPractica1.Properties
+namespace GUI.Properties
 {
     /// <summary>
     ///   Clase de recurso fuertemente tipado para buscar cadenas traducidas, etc.

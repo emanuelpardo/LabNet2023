@@ -1,5 +1,5 @@
 ﻿
-namespace labNetPractica1
+namespace GUI
 {
     partial class FrmAgregarTransporte
     {
@@ -32,13 +32,13 @@ namespace labNetPractica1
             this.rbOmnibus = new System.Windows.Forms.RadioButton();
             this.rbTaxi = new System.Windows.Forms.RadioButton();
             this.panelAgregarTransporte = new System.Windows.Forms.Panel();
-            this.lblTipo = new System.Windows.Forms.Label();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.txtPasajeros = new System.Windows.Forms.TextBox();
-            this.lblNumeroTrasnporte = new System.Windows.Forms.Label();
-            this.lblpasajero = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.lblpasajero = new System.Windows.Forms.Label();
+            this.lblNumeroTrasnporte = new System.Windows.Forms.Label();
+            this.txtPasajeros = new System.Windows.Forms.TextBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.lblTipo = new System.Windows.Forms.Label();
             this.panelAgregarTransporte.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,48 +81,15 @@ namespace labNetPractica1
             this.panelAgregarTransporte.Size = new System.Drawing.Size(262, 220);
             this.panelAgregarTransporte.TabIndex = 2;
             // 
-            // lblTipo
+            // btnCerrar
             // 
-            this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(100, 9);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(34, 13);
-            this.lblTipo.TabIndex = 2;
-            this.lblTipo.Text = "Tipo: ";
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Location = new System.Drawing.Point(28, 95);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(206, 20);
-            this.txtNumero.TabIndex = 3;
-            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
-            // 
-            // txtPasajeros
-            // 
-            this.txtPasajeros.Location = new System.Drawing.Point(28, 140);
-            this.txtPasajeros.Name = "txtPasajeros";
-            this.txtPasajeros.Size = new System.Drawing.Size(206, 20);
-            this.txtPasajeros.TabIndex = 4;
-            this.txtPasajeros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
-            // 
-            // lblNumeroTrasnporte
-            // 
-            this.lblNumeroTrasnporte.AutoSize = true;
-            this.lblNumeroTrasnporte.Location = new System.Drawing.Point(27, 79);
-            this.lblNumeroTrasnporte.Name = "lblNumeroTrasnporte";
-            this.lblNumeroTrasnporte.Size = new System.Drawing.Size(97, 13);
-            this.lblNumeroTrasnporte.TabIndex = 5;
-            this.lblNumeroTrasnporte.Text = "Numero transporte:";
-            // 
-            // lblpasajero
-            // 
-            this.lblpasajero.AutoSize = true;
-            this.lblpasajero.Location = new System.Drawing.Point(30, 124);
-            this.lblpasajero.Name = "lblpasajero";
-            this.lblpasajero.Size = new System.Drawing.Size(100, 13);
-            this.lblpasajero.TabIndex = 6;
-            this.lblpasajero.Text = "Cantidad pasajeros:";
+            this.btnCerrar.Location = new System.Drawing.Point(159, 185);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.TabIndex = 8;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnAgregar
             // 
@@ -134,15 +101,48 @@ namespace labNetPractica1
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // btnCerrar
+            // lblpasajero
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(159, 185);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrar.TabIndex = 8;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.lblpasajero.AutoSize = true;
+            this.lblpasajero.Location = new System.Drawing.Point(30, 124);
+            this.lblpasajero.Name = "lblpasajero";
+            this.lblpasajero.Size = new System.Drawing.Size(100, 13);
+            this.lblpasajero.TabIndex = 6;
+            this.lblpasajero.Text = "Cantidad pasajeros:";
+            // 
+            // lblNumeroTrasnporte
+            // 
+            this.lblNumeroTrasnporte.AutoSize = true;
+            this.lblNumeroTrasnporte.Location = new System.Drawing.Point(27, 79);
+            this.lblNumeroTrasnporte.Name = "lblNumeroTrasnporte";
+            this.lblNumeroTrasnporte.Size = new System.Drawing.Size(97, 13);
+            this.lblNumeroTrasnporte.TabIndex = 5;
+            this.lblNumeroTrasnporte.Text = "Numero transporte:";
+            // 
+            // txtPasajeros
+            // 
+            this.txtPasajeros.Location = new System.Drawing.Point(28, 140);
+            this.txtPasajeros.Name = "txtPasajeros";
+            this.txtPasajeros.Size = new System.Drawing.Size(206, 20);
+            this.txtPasajeros.TabIndex = 4;
+            this.txtPasajeros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.Location = new System.Drawing.Point(28, 95);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(206, 20);
+            this.txtNumero.TabIndex = 3;
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Location = new System.Drawing.Point(100, 9);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(34, 13);
+            this.lblTipo.TabIndex = 2;
+            this.lblTipo.Text = "Tipo: ";
             // 
             // FrmAgregarTransporte
             // 
@@ -151,7 +151,13 @@ namespace labNetPractica1
             this.ClientSize = new System.Drawing.Size(262, 220);
             this.ControlBox = false;
             this.Controls.Add(this.panelAgregarTransporte);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(278, 259);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(278, 259);
             this.Name = "FrmAgregarTransporte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Transporte";
             this.panelAgregarTransporte.ResumeLayout(false);
             this.panelAgregarTransporte.PerformLayout();

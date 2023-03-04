@@ -1,4 +1,4 @@
-﻿using INterfaces;
+﻿using INTERFACES;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,12 +30,19 @@ namespace BE
         public string ValidacionPasajerosTipo()
         {
             string paso = "";
-            if (this.Numero > 4)
-            {
+            if(!ValidarPasajeros())
                 paso = "Excede el límite de 4 pasajeros";
-            }
 
             return paso;
+
+        }
+
+        private bool ValidarPasajeros()
+        {
+            bool ok = true;
+            if (this.Pasajeros > 4)
+                ok = false;
+            return ok;
 
         }
     }

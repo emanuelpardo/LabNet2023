@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace labNetPractica1
+namespace GUI
 {
     public partial class FrmAgregarTransporte : Form
     {
@@ -24,13 +24,12 @@ namespace labNetPractica1
 
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-               (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
-
-          
+            else if (e.KeyChar == (int)Keys.Enter)
+                btnAgregar_Click(null, new EventArgs());
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -60,7 +59,7 @@ namespace labNetPractica1
                         MessageBox.Show("Agregue un número de pasajeros");
                 }
                 else
-                    MessageBox.Show("Agregue un número de pasajeros");
+                    MessageBox.Show("Agregue un número de transporte");
             }
             catch (Exception ex)
             {

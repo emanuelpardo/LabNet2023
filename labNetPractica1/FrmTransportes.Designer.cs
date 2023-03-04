@@ -1,5 +1,5 @@
 ﻿
-namespace labNetPractica1
+namespace GUI
 {
     partial class FrmTransportes
     {
@@ -30,11 +30,11 @@ namespace labNetPractica1
         private void InitializeComponent()
         {
             this.btnSalir = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTransporte = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnAvanzar = new System.Windows.Forms.Button();
             this.btnDetener = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransporte)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -47,17 +47,22 @@ namespace labNetPractica1
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // dataGridView1
+            // dgvTransporte
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(490, 206);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvTransporte.AllowUserToDeleteRows = false;
+            this.dgvTransporte.AllowUserToResizeRows = false;
+            this.dgvTransporte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTransporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTransporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTransporte.Location = new System.Drawing.Point(12, 12);
+            this.dgvTransporte.Name = "dgvTransporte";
+            this.dgvTransporte.Size = new System.Drawing.Size(490, 206);
+            this.dgvTransporte.TabIndex = 1;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(197, 236);
+            this.btnAgregar.Location = new System.Drawing.Point(203, 233);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(90, 38);
             this.btnAgregar.TabIndex = 2;
@@ -67,21 +72,23 @@ namespace labNetPractica1
             // 
             // btnAvanzar
             // 
-            this.btnAvanzar.Location = new System.Drawing.Point(197, 280);
+            this.btnAvanzar.Location = new System.Drawing.Point(203, 277);
             this.btnAvanzar.Name = "btnAvanzar";
             this.btnAvanzar.Size = new System.Drawing.Size(90, 38);
             this.btnAvanzar.TabIndex = 3;
             this.btnAvanzar.Text = "Avanzar";
             this.btnAvanzar.UseVisualStyleBackColor = true;
+            this.btnAvanzar.Click += new System.EventHandler(this.btnAvanzar_Click);
             // 
             // btnDetener
             // 
-            this.btnDetener.Location = new System.Drawing.Point(197, 324);
+            this.btnDetener.Location = new System.Drawing.Point(203, 321);
             this.btnDetener.Name = "btnDetener";
             this.btnDetener.Size = new System.Drawing.Size(90, 38);
             this.btnDetener.TabIndex = 4;
             this.btnDetener.Text = "Detener";
             this.btnDetener.UseVisualStyleBackColor = true;
+            this.btnDetener.Click += new System.EventHandler(this.btnDetener_Click);
             // 
             // FrmTransportes
             // 
@@ -92,13 +99,13 @@ namespace labNetPractica1
             this.Controls.Add(this.btnDetener);
             this.Controls.Add(this.btnAvanzar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvTransporte);
             this.Controls.Add(this.btnSalir);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmTransportes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transportes publicos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransporte)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -106,7 +113,7 @@ namespace labNetPractica1
         #endregion
 
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTransporte;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnAvanzar;
         private System.Windows.Forms.Button btnDetener;
