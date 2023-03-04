@@ -29,7 +29,12 @@ namespace BLL
                         if (tipo == TransportePublico.TipoOmnibus)
                         {
                             Omnibus OmnibusNuevo = new Omnibus(tipo, numerotransporte, numeropasajeros);
-                            this.Alta(OmnibusNuevo);
+                            mensaje_devolucion = OmnibusNuevo.ValidacionPasajerosTipo();
+                            if (!string.IsNullOrEmpty(mensaje_devolucion))
+                                paso = false;
+                            else
+                                this.Alta(OmnibusNuevo);
+
 
                         }
                         else if (tipo == TransportePublico.TipoTaxi)
@@ -42,12 +47,8 @@ namespace BLL
                             if (!string.IsNullOrEmpty(mensaje_devolucion))
                                 paso = false;
                             else
-                                 if (!this.Lista_TransportePublico.Exists(a => a.Numero == TaxiNuevo.Numero && a.Tipo == TaxiNuevo.Tipo))
                                 this.Alta(TaxiNuevo);
-                            else
-                            {
-
-                            }
+                            
                         }
                         else
                         {

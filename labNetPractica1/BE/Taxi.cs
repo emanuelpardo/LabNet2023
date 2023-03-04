@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Taxi : TransportePublico, IValidacion
+    public class Taxi : TransportePublico
     {
         public Taxi() : base()
         {
@@ -27,23 +27,23 @@ namespace BE
             return "el Taxi está detenido";
         }
 
-        public string ValidacionPasajerosTipo()
-        {
-            string paso = "";
-            if(!ValidarPasajeros())
-                paso = "Excede el límite de 4 pasajeros";
+        //public string ValidacionPasajerosTipo()
+        //{
+        //    string paso = "";
+        //    if(!ValidarPasajeros())
+        //        paso = "Excede el límite de 4 pasajeros";
 
-            return paso;
+        //    return paso;
 
-        }
+        //}
 
-        private bool ValidarPasajeros()
-        {
-            bool ok = true;
-            if (this.Pasajeros > 4)
-                ok = false;
-            return ok;
+        //private bool ValidarPasajeros()
+        //{
+        //    bool ok = true;
+        //    if (this.Pasajeros > 4)
+        //        ok = false;
+        //    return ok;
 
-        }
+        //}
     }
 }

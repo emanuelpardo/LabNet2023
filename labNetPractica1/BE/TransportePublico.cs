@@ -1,4 +1,5 @@
-﻿using System;
+﻿using INTERFACES;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public abstract class TransportePublico 
+    public abstract class TransportePublico : IValidacion
     {
         public const string TipoOmnibus = "Omnibus";
         public const string TipoTaxi = "Taxi";
@@ -50,6 +51,36 @@ namespace BE
         public abstract string Avanzar();
         public abstract string Detenerse();
 
-        
+        public string ValidacionPasajerosTipo()
+        {
+            string paso = "";
+            if (this is Omnibus)
+            {
+                if (!ValidarPasajeros(true))
+                    paso = "Excede el límite de 100 pasajeros";
+
+                
+            }
+            else if (this is Taxi)
+            {
+                if (!ValidarPasajeros(false))
+                    paso = "Excede el límite de 4 pasajeros";
+            }
+            return paso;
+        }
+
+        private bool ValidarPasajeros(bool esOmnibus)
+        {
+            bool ok = true;
+            if (esOmnibus && this.Pasajeros > 100)
+                ok = false;
+            if (!esOmnibus && this.Pasajeros > 4)
+                ok = false;
+            return ok;
+
+        }
     }
+    
+        
+
 }
