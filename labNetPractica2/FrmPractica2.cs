@@ -39,17 +39,6 @@ namespace labNetPractica2
             {
                 MessageBox.Show(Decimal.Parse(txtNumeroUno.Text).Dividir(Decimal.Parse(txtNumeroDos.Text)).ToString());
             }
-            //  catch (FormatException)
-            //{
-            //    try
-            //    {
-            //        throw new BadInputException();
-            //    }
-            //    catch (BadInputException re)
-            //    {
-            //        MessageBox.Show(re.Message + re.StackTrace + re.InnerException);
-            //    }
-            //}
             catch (FormatException ex)
             {
                 MessageBox.Show($"Seguro Ingreso una letra o no ingreso nada! {ex.Message} - {ex.StackTrace}");
