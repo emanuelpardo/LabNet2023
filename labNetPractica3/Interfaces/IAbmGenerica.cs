@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    public interface IAbmGenerica<T>
+    public interface IAbmGenerica<T,TT>
     {
 
         void Insert(T x);
         void Delete(T x);
         void Modify(T x);
+
+        bool Existe(TT x);
+
 
     }
 }

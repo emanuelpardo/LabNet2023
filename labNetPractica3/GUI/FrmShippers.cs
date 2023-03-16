@@ -19,8 +19,16 @@ namespace GUI
         {
             InitializeComponent();
             _blShippers = new BL_Shippers();
+            ConfigurarDataGrid();
+            btnRefrescar_Click(null, new EventArgs());
         }
-
+        private void ConfigurarDataGrid()
+        {
+            dgvShippers.MultiSelect = false;
+            dgvShippers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvShippers.EditMode = DataGridViewEditMode.EditProgrammatically;
+            
+        }
         private void MostrarDataGrid(object o)
         {
             dgvShippers.DataSource = null;

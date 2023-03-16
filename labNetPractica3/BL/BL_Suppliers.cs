@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    public class BL_Suppliers : IGetGenerica<Suppliers>, IAbmGenerica<Suppliers>
+    public class BL_Suppliers : IGetGenerica<Suppliers>, IAbmGenerica<Suppliers,string>
     {
         private MP_Suppliers _mpSuppliers;
            
@@ -45,14 +45,41 @@ namespace BL
             
         }
 
-        public void Modify(Suppliers x)
+        public bool Existe(string x)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return _mpSuppliers.Existe(x);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
         public void Delete(Suppliers x)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _mpSuppliers.Delete(x);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void Modify(Suppliers x)
+        {
+            try
+            {
+                _mpSuppliers.Modify(x);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

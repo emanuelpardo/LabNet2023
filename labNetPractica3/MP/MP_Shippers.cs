@@ -12,68 +12,25 @@ namespace MP
    
     public class MP_Shippers : IGetGenerica<Shippers>
     {
-        NorthwindContext _nwContext;
+        private NorthwindContext _nwContext;
 
         public MP_Shippers()
         {
             _nwContext = new NorthwindContext();
         }
 
-      
 
         public List<Shippers> GetListAll()
         {
             try
             {
-             return _nwContext.Shippers.ToList();
+              return _nwContext.Shippers.AsNoTracking().ToList();
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception($"Error al traer Shippers {ex.Message} -- {ex.StackTrace}");
             }
-           
-        }
 
-        public void Insert(Shippers x)
-        {
-            try
-            {
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            throw new NotImplementedException();
-        }
-
-        public void Modify(Shippers x)
-        {
-            try
-            {
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Shippers x)
-        {
-            try
-            {
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            throw new NotImplementedException();
         }
     }
 }

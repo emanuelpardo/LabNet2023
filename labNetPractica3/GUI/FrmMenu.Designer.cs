@@ -31,9 +31,9 @@ namespace GUI
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMShippersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shippersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listAboutShippersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBMShippersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +58,13 @@ namespace GUI
             this.suppliersToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.suppliersToolStripMenuItem.Text = "Suppliers";
             // 
+            // aBMShippersToolStripMenuItem
+            // 
+            this.aBMShippersToolStripMenuItem.Name = "aBMShippersToolStripMenuItem";
+            this.aBMShippersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aBMShippersToolStripMenuItem.Text = "ABM Suppliers";
+            this.aBMShippersToolStripMenuItem.Click += new System.EventHandler(this.aBMShippersToolStripMenuItem_Click);
+            // 
             // shippersToolStripMenuItem
             // 
             this.shippersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -69,16 +76,9 @@ namespace GUI
             // listAboutShippersToolStripMenuItem
             // 
             this.listAboutShippersToolStripMenuItem.Name = "listAboutShippersToolStripMenuItem";
-            this.listAboutShippersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listAboutShippersToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.listAboutShippersToolStripMenuItem.Text = "List about Shippers";
             this.listAboutShippersToolStripMenuItem.Click += new System.EventHandler(this.listAboutShippersToolStripMenuItem_Click);
-            // 
-            // aBMShippersToolStripMenuItem
-            // 
-            this.aBMShippersToolStripMenuItem.Name = "aBMShippersToolStripMenuItem";
-            this.aBMShippersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aBMShippersToolStripMenuItem.Text = "ABM Shippers";
-            this.aBMShippersToolStripMenuItem.Click += new System.EventHandler(this.aBMShippersToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 

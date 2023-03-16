@@ -9,5 +9,6 @@ namespace Interfaces
     public interface IGetGenerica<T>
     {
         List<T> GetListAll();
+       
     }
 }

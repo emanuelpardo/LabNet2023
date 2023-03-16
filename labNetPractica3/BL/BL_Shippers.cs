@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    public class BL_Shippers : IGetGenerica<Shippers>, IAbmGenerica<Shippers>
+    public class BL_Shippers : IGetGenerica<Shippers>
     {
         private MP_Shippers _mpShippers;
         public BL_Shippers()
@@ -28,42 +28,6 @@ namespace BL
             }
            
         }
-
-        public void Insert(Shippers x)
-        {
-            try
-            {
-                _mpShippers.Insert(x);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public void Modify(Shippers x)
-        {
-            try
-            {
-                _mpShippers.Modify(x);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public void Delete(Shippers x)
-        {
-            try
-            {
-                _mpShippers.Delete(x);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
+               
     }
 }

@@ -21,33 +21,48 @@ namespace GUI
 
         private void aBMShippersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            if (frm_AbmSuppliers != null)
-                frm_AbmSuppliers.BringToFront();
-            else
+            try
             {
-                frm_AbmSuppliers = new FrmABMSuppliers();
-                frm_AbmSuppliers.FormClosed += (o, args) => frm_AbmSuppliers = null;
-                frm_AbmSuppliers.MdiParent = this;
-                frm_AbmSuppliers.WindowState = FormWindowState.Maximized;
-                frm_AbmSuppliers.Show();
+                if (frm_AbmSuppliers != null)
+                    frm_AbmSuppliers.BringToFront();
+                else
+                {
+                    frm_AbmSuppliers = new FrmABMSuppliers();
+                    frm_AbmSuppliers.FormClosed += (o, args) => frm_AbmSuppliers = null;
+                    frm_AbmSuppliers.MdiParent = this;
+                    frm_AbmSuppliers.WindowState = FormWindowState.Maximized;
+                    frm_AbmSuppliers.Show();
 
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void listAboutShippersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (frm_Shippers != null)
-                frm_Shippers.BringToFront();
-            else
+            try
             {
-                frm_Shippers = new FrmShippers();
-                frm_Shippers.FormClosed += (o, args) => frm_Shippers = null;
-                frm_Shippers.MdiParent = this;
-                frm_Shippers.WindowState = FormWindowState.Maximized;
-                frm_Shippers.Show();
+                if (frm_Shippers != null)
+                    frm_Shippers.BringToFront();
+                else
+                {
+                    frm_Shippers = new FrmShippers();
+                    frm_Shippers.FormClosed += (o, args) => frm_Shippers = null;
+                    frm_Shippers.MdiParent = this;
+                    frm_Shippers.WindowState = FormWindowState.Maximized;
+                    frm_Shippers.Show();
 
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
