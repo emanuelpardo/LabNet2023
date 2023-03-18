@@ -19,7 +19,6 @@ namespace GUI
             InitializeComponent();
             _blLinQ = new BL_LinQ();
             ConfigurarDataGrid();
-            btnRefrescar_Click(null, new EventArgs());
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -40,19 +39,7 @@ namespace GUI
             dgvLinq.DataSource = o;
         }
 
-        private void btnRefrescar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-               
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-
-        }
-
+       
         private void btnPuntos_Click(object sender, EventArgs e)
         {
             try
