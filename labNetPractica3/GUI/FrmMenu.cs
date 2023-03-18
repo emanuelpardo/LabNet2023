@@ -14,6 +14,7 @@ namespace GUI
     {
         FrmABMSuppliers frm_AbmSuppliers;
         FrmShippers frm_Shippers;
+        FrmLinQ frm_Linq;
         public FrmMenu()
         {
             InitializeComponent();
@@ -69,6 +70,30 @@ namespace GUI
         {
             if (MessageBox.Show("Está seguro que desea salir?", "Exit", MessageBoxButtons.OKCancel, MessageBoxIcon.Stop) == DialogResult.OK)
                 Application.Exit();
+        }
+
+        private void verPuntosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                if (frm_Linq != null)
+                    frm_Linq.BringToFront();
+                else
+                {
+                    frm_Linq = new FrmLinQ();
+                    frm_Linq.FormClosed += (o, args) => frm_Linq = null;
+                    frm_Linq.MdiParent = this;
+                    frm_Linq.WindowState = FormWindowState.Maximized;
+                    frm_Linq.Show();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

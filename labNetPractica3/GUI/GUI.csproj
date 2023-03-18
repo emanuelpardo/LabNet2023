@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmLinQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLinQ.Designer.cs">
+      <DependentUpon>FrmLinQ.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmShippers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmLinQ.resx">
+      <DependentUpon>FrmLinQ.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmShippers.resx">
       <DependentUpon>FrmShippers.cs</DependentUpon>
     </EmbeddedResource>

@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MP_LinQ.cs" />
     <Compile Include="MP_Shippers.cs" />
     <Compile Include="MP_Suppliers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

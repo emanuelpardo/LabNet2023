@@ -35,6 +35,8 @@ namespace GUI
             this.shippersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listAboutShippersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ejerciciosLINQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verPuntosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,6 +45,7 @@ namespace GUI
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.suppliersToolStripMenuItem,
             this.shippersToolStripMenuItem,
+            this.ejerciciosLINQToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -61,7 +64,7 @@ namespace GUI
             // aBMShippersToolStripMenuItem
             // 
             this.aBMShippersToolStripMenuItem.Name = "aBMShippersToolStripMenuItem";
-            this.aBMShippersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aBMShippersToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.aBMShippersToolStripMenuItem.Text = "ABM Suppliers";
             this.aBMShippersToolStripMenuItem.Click += new System.EventHandler(this.aBMShippersToolStripMenuItem_Click);
             // 
@@ -86,6 +89,21 @@ namespace GUI
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // ejerciciosLINQToolStripMenuItem
+            // 
+            this.ejerciciosLINQToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verPuntosToolStripMenuItem});
+            this.ejerciciosLINQToolStripMenuItem.Name = "ejerciciosLINQToolStripMenuItem";
+            this.ejerciciosLINQToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.ejerciciosLINQToolStripMenuItem.Text = "Ejercicios LINQ";
+            // 
+            // verPuntosToolStripMenuItem
+            // 
+            this.verPuntosToolStripMenuItem.Name = "verPuntosToolStripMenuItem";
+            this.verPuntosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verPuntosToolStripMenuItem.Text = "Ver Puntos";
+            this.verPuntosToolStripMenuItem.Click += new System.EventHandler(this.verPuntosToolStripMenuItem_Click);
             // 
             // FrmMenu
             // 
@@ -117,5 +135,7 @@ namespace GUI
         private System.Windows.Forms.ToolStripMenuItem shippersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listAboutShippersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ejerciciosLINQToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verPuntosToolStripMenuItem;
     }
 }
