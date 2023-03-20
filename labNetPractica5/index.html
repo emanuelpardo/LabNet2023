@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adivina-Adivinador</title>
+    </head>
+    <body>
+        <div id="fondo">
+            <h1>
+                <button class="formaBoton" id="botonRojo" onclick="reiniciar()">Reiniciar!</button>
+            </h1>
+            <h2>
+                <p>Adivina el Número! <span class="colorSpan">(Entre el 1 y 20)</span></p>
+            </h2>
+            <h3>
+                <hr/>
+            </h3>
+            <p>
+                <input id="idNumeroUsuario" type="number" min="1">
+                <label class="labelStyle" id="mensajeResultado"></label>
+            </p>
+            <p>
+                <button class="formaBoton" id="botonVerde" onclick="probar()">Probar!</button> 
+                <label class="labelStyle" id="Score">Score: <span id="spanScore" type="number"></span></label>
+                <label class="labelStyle" id="Hscore">Highest Score: <span id="spanHscore" type="number"></span></label> 
+            </p>
+        </div>
+        <link rel="stylesheet" href="style.css">
+        <script src="labNetPractica5.js"></script>
+    </body>
+</html>
