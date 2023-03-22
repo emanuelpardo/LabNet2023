@@ -1,0 +1,26 @@
+﻿@model List<BE.Suppliers>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de Suppliers (Proveedores)</h2>
+<table>
+    <thead>
+        <tr>
+            <td>CompanyName</td>
+            <td>ContactName</td>
+            <td>City</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CompanyName</td>
+                <td>@item.ContactName</td>
+                <td>@item.City</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
