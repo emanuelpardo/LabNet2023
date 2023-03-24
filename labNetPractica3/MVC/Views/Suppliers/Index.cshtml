@@ -1,26 +1,40 @@
-﻿@model List<BE.Suppliers>
+﻿@model List<MVC.Models.SuppliersViewModel>
 @{
     ViewBag.Title = "Index";
+
 }
 
-<h2>Listado de Suppliers (Proveedores)</h2>
-<table>
+<h2 align="center">Listado de Suppliers (Proveedores)</h2>
+
+<table class="table">
     <thead>
         <tr>
-            <td>CompanyName</td>
-            <td>ContactName</td>
-            <td>City</td>
+            <th>Company Name</th>
+            <th>Contact Name</th>
+            <th>City</th>
         </tr>
     </thead>
     <tbody>
+        @Html.ActionLink("Crear nuevo Supplier", "InsertEdit", null, new { @class = "btn btn-primary" })
         @foreach (var item in Model)
         {
+
             <tr>
-                <td>@item.CompanyName</td>
-                <td>@item.ContactName</td>
-                <td>@item.City</td>
+                <td>@item.NombreCompania</td>
+                <td>@item.NombreContacto</td>
+                <td>@item.Ciudad</td>
+                <td>@Html.ActionLink("Eliminar", "Delete", new { id = @item.ID }, new { onclick = "return confirmarMensaje()" })</td>
+                <td>@Html.ActionLink("Editar", "InsertEdit", new { id = @item.ID }, new { onclick = "return confirmarMensaje()" })</td>
             </tr>
         }
     </tbody>
 </table>
+
+<script>
+    function confirmarMensaje() {
+        return confirm('Desea continuar?')
+    }
+</script>
+
+
 

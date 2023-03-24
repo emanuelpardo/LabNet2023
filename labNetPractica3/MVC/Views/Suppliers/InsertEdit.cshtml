@@ -1,0 +1,50 @@
+﻿@model MVC.Models.SuppliersViewModel
+@{
+    ViewBag.Title = "InsertEdit";
+}
+
+<style>
+    .textboxMargen {
+        background-color: whitesmoke;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: small;
+    }
+    .formaBoton {
+        cursor: pointer;
+        border-color: transparent;
+        color: Highlight;
+        font-family: 'Courier New', Courier, monospace;
+        font-style: normal;
+        font-size: small;
+        height: 30px;
+        width: 100px;
+    }
+
+</style>
+
+<h2>Ingrese o edite el proveedor</h2>
+
+@using (Html.BeginForm("Guardar", "Suppliers", FormMethod.Post))
+{
+    <div>
+        @Html.HiddenFor(s => s.ID);
+        @Html.Label("Nombre de Compañía: ")
+        @Html.TextBoxFor(s => s.NombreCompania, new { @class = "textboxMargen" })
+        @Html.ValidationMessageFor(s => s.NombreCompania)
+    </div>
+    <hr />
+    <div>
+        @Html.Label("Nombre del Contacto: ")
+        @Html.TextBoxFor(s => s.NombreContacto, new { @class = "textboxMargen" })
+    </div>
+    <hr />
+    <div>
+        @Html.Label("Ciudad: ")
+        @Html.TextBoxFor(s => s.Ciudad, new { @class = "textboxMargen" })
+    </div>
+    <hr />
+    <div>
+        <input type="submit" value="Guardar" class="formaBoton"/>
+    </div>
+   
+}
