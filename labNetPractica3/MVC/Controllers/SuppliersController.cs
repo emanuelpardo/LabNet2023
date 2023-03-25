@@ -12,12 +12,13 @@ namespace MVC.Controllers
     public class SuppliersController : Controller
     {
         private const string index = "Index";
+        private const string insertedit = "InsertEdit";
         private BL_Suppliers _blsuppliers;
         public SuppliersController()
         {
             _blsuppliers = new BL_Suppliers();
         }
-       
+
         [HttpGet]
         public ActionResult Index()
         {
@@ -29,7 +30,7 @@ namespace MVC.Controllers
             {
                 return Content(ex.Message);
             }
-           
+
         }
 
         [HttpGet]
@@ -44,22 +45,21 @@ namespace MVC.Controllers
             }
             catch (Exception ex)
             {
-
-                return Content(ex.Message);
+                return View(index, ex.Message);
             }
-          
+
         }
 
         [HttpGet]
         public ActionResult InsertEdit(int? id)
         {
-            SuppliersViewModel Spw = new SuppliersViewModel();
+            SuppliersViewModel Svw = new SuppliersViewModel();
             try
             {
                 if (id != null)
                 {
                     var s = _blsuppliers.GetListAll().Where(x => x.SupplierID == id.Value).FirstOrDefault();
-                    Spw = new SuppliersViewModel
+                    Svw = new SuppliersViewModel
                     {
                         ID = s.SupplierID,
                         NombreCompania = s.CompanyName,
@@ -68,43 +68,45 @@ namespace MVC.Controllers
                     };
                 }
 
-                return View(Spw);
+                return View(Svw);
             }
             catch (Exception ex)
             {
-                return Content(ex.Message);
+                ModelState.AddModelError("", ex.Message);
+                return View(Svw);
             }
-            
+
         }
 
-        [HttpPost]
-        public ActionResult Guardar(SuppliersViewModel Svw)
+
+        public ActionResult Save(SuppliersViewModel Svw)
         {
             try
             {
-                if (ModelState.IsValid)
+                if (Svw?.ID != null)
                 {
-
-                    if (Svw.ID != null)
-                    {
-                        var s = _blsuppliers.GetListAll().Where(x => x.SupplierID == Svw.ID.Value).FirstOrDefault();
-                        s.CompanyName = Svw.NombreCompania;
-                        s.ContactName = Svw.NombreContacto;
-                        s.City = Svw.Ciudad;
-                        _blsuppliers.Modify(s);
-                    }
-                    else
-                        _blsuppliers.Insert(new Suppliers { CompanyName = Svw.NombreCompania, ContactName = Svw.NombreContacto, City = Svw.Ciudad });
-                   
+                    var s = _blsuppliers.GetListAll().Where(x => x.SupplierID == Svw.ID.Value).FirstOrDefault();
+                    s.CompanyName = Svw.NombreCompania;
+                    s.ContactName = Svw.NombreContacto;
+                    s.City = Svw.Ciudad;
+                    _blsuppliers.Modify(s);
                 }
+                else
+                    _blsuppliers.Insert(new Suppliers { CompanyName = Svw.NombreCompania, ContactName = Svw.NombreContacto, City = Svw.Ciudad });
+
             }
             catch (Exception ex)
             {
-                return Content(ex.Message);
+                ModelState.AddModelError("", ex.Message);
+                return View(insertedit, Svw);
             }
+
             return RedirectToAction(index);
+        }
 
-
+        public ActionResult GoBack()
+        {
+            return RedirectToAction(index);
         }
     }
 }

@@ -4,47 +4,43 @@
 }
 
 <style>
-    .textboxMargen {
+    .textboxEstilo {
         background-color: whitesmoke;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: small;
-    }
-    .formaBoton {
-        cursor: pointer;
-        border-color: transparent;
-        color: Highlight;
-        font-family: 'Courier New', Courier, monospace;
-        font-style: normal;
-        font-size: small;
-        height: 30px;
-        width: 100px;
+        margin-left: 3%;
+        width: 60%;
     }
 
 </style>
 
 <h2>Ingrese o edite el proveedor</h2>
 
-@using (Html.BeginForm("Guardar", "Suppliers", FormMethod.Post))
+@using (Html.BeginForm("Save", "Suppliers", FormMethod.Post))
 {
+    @Html.ValidationSummary()
     <div>
         @Html.HiddenFor(s => s.ID);
         @Html.Label("Nombre de Compañía: ")
-        @Html.TextBoxFor(s => s.NombreCompania, new { @class = "textboxMargen" })
+        @Html.TextBoxFor(s => s.NombreCompania, new { @class = "textboxEstilo" })
         @Html.ValidationMessageFor(s => s.NombreCompania)
     </div>
     <hr />
     <div>
         @Html.Label("Nombre del Contacto: ")
-        @Html.TextBoxFor(s => s.NombreContacto, new { @class = "textboxMargen" })
+        @Html.TextBoxFor(s => s.NombreContacto, new { @class = "textboxEstilo" })
+        @Html.ValidationMessageFor(s => s.NombreContacto)
     </div>
     <hr />
     <div>
         @Html.Label("Ciudad: ")
-        @Html.TextBoxFor(s => s.Ciudad, new { @class = "textboxMargen" })
+        @Html.TextBoxFor(s => s.Ciudad, new { @class = "textboxEstilo" })
+        @Html.ValidationMessageFor(s => s.Ciudad)
     </div>
     <hr />
     <div>
-        <input type="submit" value="Guardar" class="formaBoton"/>
+        <input type="submit" value="Guardar" class="btn btn-primary" />
+        @Html.ActionLink("Volver", "GoBack", null, new { @class = "btn btn-danger" })
     </div>
-   
 }
+
