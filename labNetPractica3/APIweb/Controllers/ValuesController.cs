@@ -8,9 +8,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace APIweb.Controllers
-{
+{  
+    [EnableCors("*","*","*")]
     public class ValuesController : ApiController
     {
 
@@ -114,7 +116,7 @@ namespace APIweb.Controllers
                 if (supplier != null)
                 {
                     _blsuppliers.Delete(supplier);
-                    return Ok($"Eliminación completa id = {id}");
+                    return Ok($"Eliminación exitosa");
                 }
                 else
                     return NotFound();
