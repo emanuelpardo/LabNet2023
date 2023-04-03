@@ -1,0 +1,16 @@
+<div class="titulo">
+    <h1>Ver Supplier</h1>
+</div>
+
+<mat-card *ngIf="supplier != null" class="contenedora margenes">
+    <mat-card-title>{{ supplier.NombreCompania }}</mat-card-title>
+    <br><hr><br>
+    <mat-card-content>
+        <p><strong>Contacto: </strong> {{ supplier.NombreContacto }} </p>
+        <p><strong>Ciudad: </strong> {{ supplier.Ciudad }} </p>
+    </mat-card-content>
+    <button [routerLink]="['/listSuppliers']" mat-raised-button color="warn">
+        Volver
+    </button>
+  </mat-card>
+

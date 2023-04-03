@@ -1,0 +1,24 @@
+table{
+    margin-top: 2%;
+    margin-left:8%;
+    margin-right: 8%;
+    width: 80%;
+}
+
+.manito{
+    cursor: pointer;
+}
+.buscar{
+color:white
+}
+.editar{
+    padding-left: 3%;
+color:yellow;
+}
+.eliminar{
+    padding-left: 3%;
+    color:red;
+}
+
+
+

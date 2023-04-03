@@ -1,0 +1,34 @@
+<div class="titulo">
+    <h1>Agregar y Editar Supplier</h1>
+</div>
+<div class="contenedor contenedora">
+    <form [formGroup]="formSupplier" (ngSubmit)="insertUpdateSuppliers()">
+        <mat-grid-list cols="2" rowHeight="80px">
+            <mat-grid-tile colspan="2">
+                <mat-form-field appearance="fill">
+                  <mat-label>Nombre de la Compañía</mat-label>
+                  <input matInput formControlName="compania"> 
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2">
+                <mat-form-field appearance="fill" >
+                    <mat-label>Nombre del Contacto</mat-label>
+                    <input matInput formControlName="contacto">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2"> 
+                <mat-form-field appearance="fill">
+                    <mat-label>Ciudad</mat-label>
+                    <input matInput formControlName="ciudad">
+                </mat-form-field></mat-grid-tile>
+            <mat-grid-tile colspan="2">
+                <button [disabled]="formSupplier.invalid" type="submit" class="botonAceptar" mat-raised-button color="primary">
+                    Aceptar
+                </button>
+                <button [routerLink]="['/listSuppliers']" mat-raised-button color="warn" >
+                    Volver
+                </button>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</div>
